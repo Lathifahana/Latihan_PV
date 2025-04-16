@@ -2,7 +2,7 @@ package Koneksi;
 import java.sql.*;
 /**
  *
- * @author lathifah
+ * @author Lathifah
  */
 public class koneksi {
     private Connection koneksi;
