@@ -4,6 +4,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.KeyEvent;
 import Koneksi.koneksi;
+
+/**
+ *
+ * @author Lathifah
+ */
+
 public class pelanggan extends javax.swing.JFrame {
     private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
