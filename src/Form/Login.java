@@ -3,7 +3,6 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import Koneksi.koneksi;
 
-
 /**
  *
  * @author hp
@@ -15,7 +14,7 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public Login() {
+        public Login() {
         initComponents();
     }
 
@@ -33,7 +32,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtuser = new javax.swing.JTextField();
         txtpass = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        blogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,11 +54,11 @@ public class Login extends javax.swing.JFrame {
 
         txtpass.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        blogin.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        blogin.setText("Login");
+        blogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bloginActionPerformed(evt);
             }
         });
 
@@ -81,7 +80,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                            .addComponent(blogin)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(90, Short.MAX_VALUE))
         );
@@ -99,7 +98,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(blogin)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -110,10 +109,10 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtuserActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloginActionPerformed
         try{
-            String sql = "SELECT * FROM kasir Where id_kasir='"+txtuser.getText()+"'AND password='"+txtpass.getText()+"'";
-            Statement stat = conn.CreateStatement();
+            String sql = "SELECT * FROM kasir WHERE id_kasir='" + txtuser.getText() + "' AND password='" + txtpass.getText() + "'";
+            Statement stat = conn.createStatement();
             ResultSet hasil = stat.executeQuery(sql);
             if(hasil.next()){
                 UserID.setUserLogin(hasil.getString("id_kasir"));
@@ -126,7 +125,7 @@ public class Login extends javax.swing.JFrame {
 }catch (SQLException e){
     JOptionPane.showMessageDialog(null,"Gagal Login !!!"+e);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,7 +163,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton blogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

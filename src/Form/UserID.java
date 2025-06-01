@@ -7,17 +7,17 @@ package Form;
 
 /**
  *
- * @author hp
+ * @author Lathifah
  */
 public class UserID {
     private static String kd;
-    //private static String level;
+    //private static string level;
     public static void setUserLogin(String kode){
-        UserID.kd = kode;
+        kd = kode;
     }
     
     public static String getUserLogin(){
         return kd;
     }
-}
     
+}
