@@ -2,7 +2,7 @@
 
 Nama : Lathifah Hana Nabilah
 
-Kelas : R6Q (RQ)
+Kelas : R6Q
 
 NPM : 202243501597
 
