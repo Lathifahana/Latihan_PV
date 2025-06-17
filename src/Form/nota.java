@@ -221,6 +221,7 @@ private Connection conn = new koneksi().connect();
             }
         });
 
+        bcarip.setBackground(new java.awt.Color(153, 153, 255));
         bcarip.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bcarip.setText("Cari");
         bcarip.addActionListener(new java.awt.event.ActionListener() {
@@ -290,6 +291,7 @@ private Connection conn = new koneksi().connect();
         jLabel15.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel15.setText("Total                             :");
 
+        btambah.setBackground(new java.awt.Color(204, 255, 102));
         btambah.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         btambah.setText("Tambah");
         btambah.addActionListener(new java.awt.event.ActionListener() {
@@ -308,6 +310,7 @@ private Connection conn = new koneksi().connect();
             }
         });
 
+        bcaribrg.setBackground(new java.awt.Color(153, 153, 255));
         bcaribrg.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bcaribrg.setText("Cari");
         bcaribrg.addActionListener(new java.awt.event.ActionListener() {
@@ -401,6 +404,7 @@ private Connection conn = new koneksi().connect();
         ));
         jScrollPane1.setViewportView(tbltransaksi);
 
+        bhapus.setBackground(new java.awt.Color(255, 0, 51));
         bhapus.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bhapus.setText("Hapus");
         bhapus.addActionListener(new java.awt.event.ActionListener() {
@@ -432,6 +436,7 @@ private Connection conn = new koneksi().connect();
                 .addContainerGap())
         );
 
+        bsimpan.setBackground(new java.awt.Color(0, 204, 51));
         bsimpan.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bsimpan.setText("Simpan");
         bsimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -440,6 +445,7 @@ private Connection conn = new koneksi().connect();
             }
         });
 
+        bbatal.setBackground(new java.awt.Color(204, 204, 204));
         bbatal.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bbatal.setText("Batal");
         bbatal.addActionListener(new java.awt.event.ActionListener() {
@@ -448,6 +454,7 @@ private Connection conn = new koneksi().connect();
             }
         });
 
+        bkeluar.setBackground(new java.awt.Color(0, 204, 204));
         bkeluar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bkeluar.setText("Keluar");
         bkeluar.addActionListener(new java.awt.event.ActionListener() {

@@ -217,34 +217,6 @@ WHERE nota.id_nota = $P{id_nota}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{totalBelanja}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement mode="Transparent" x="53" y="44" width="53" height="20" backcolor="#99CCFF" uuid="f02e5853-7ed4-4b21-a4cb-27518fd51368"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[NPM]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Transparent" x="53" y="24" width="53" height="20" backcolor="#99CCFF" uuid="ab54a1f7-dc2c-4811-9595-b9ecf8dd117a"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[NAMA]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Transparent" x="106" y="44" width="98" height="20" backcolor="#99CCFF" uuid="37ed3e2c-81aa-4c7e-bc1f-8d79a5473f30"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[202243501569]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="106" y="24" width="158" height="20" backcolor="#99CCFF" uuid="589cdb08-a790-4933-8210-b7dafa5fa233"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[LINTANG FAUZAN RISNANDAR]]></text>
-			</staticText>
 		</band>
 	</pageFooter>
 	<summary>

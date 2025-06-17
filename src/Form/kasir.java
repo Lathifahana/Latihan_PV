@@ -159,7 +159,7 @@ public class kasir extends javax.swing.JFrame {
 
         txtpass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data Kasir", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Kasir"));
 
         tblkasir.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         tblkasir.setModel(new javax.swing.table.DefaultTableModel(
@@ -187,6 +187,7 @@ public class kasir extends javax.swing.JFrame {
             }
         });
 
+        bcari.setBackground(new java.awt.Color(153, 153, 255));
         bcari.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bcari.setText("Cari");
 
@@ -217,6 +218,7 @@ public class kasir extends javax.swing.JFrame {
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
+        bsimpan.setBackground(new java.awt.Color(0, 204, 51));
         bsimpan.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bsimpan.setText("Simpan");
         bsimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -225,6 +227,7 @@ public class kasir extends javax.swing.JFrame {
             }
         });
 
+        bubah.setBackground(new java.awt.Color(255, 204, 0));
         bubah.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bubah.setText("Ubah");
         bubah.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +236,7 @@ public class kasir extends javax.swing.JFrame {
             }
         });
 
+        bbatal.setBackground(new java.awt.Color(204, 204, 204));
         bbatal.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bbatal.setText("Batal");
         bbatal.addActionListener(new java.awt.event.ActionListener() {
@@ -241,6 +245,7 @@ public class kasir extends javax.swing.JFrame {
             }
         });
 
+        bkeluar.setBackground(new java.awt.Color(0, 204, 204));
         bkeluar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bkeluar.setText("Keluar");
         bkeluar.addActionListener(new java.awt.event.ActionListener() {
@@ -249,6 +254,7 @@ public class kasir extends javax.swing.JFrame {
             }
         });
 
+        bhapus.setBackground(new java.awt.Color(255, 0, 51));
         bhapus.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bhapus.setText("Hapus");
         bhapus.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +303,7 @@ public class kasir extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(302, 302, 302)
+                        .addGap(315, 315, 315)
                         .addComponent(bsimpan)
                         .addGap(18, 18, 18)
                         .addComponent(bubah, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)

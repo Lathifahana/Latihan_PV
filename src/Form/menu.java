@@ -117,6 +117,7 @@ private Connection conn = new koneksi().connect();
         jMenu3.setText("Laporan");
         jMenu3.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
 
+        jMenuItem5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jMenuItem5.setText("Laporan Data Pelanggan");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

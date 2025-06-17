@@ -113,7 +113,9 @@ public class barang extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel6.setText("Harga Jual              :");
 
+        bsimpan.setBackground(new java.awt.Color(0, 204, 51));
         bsimpan.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        bsimpan.setForeground(new java.awt.Color(0, 0, 0));
         bsimpan.setText("Simpan");
         bsimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +123,9 @@ public class barang extends javax.swing.JFrame {
             }
         });
 
+        bubah.setBackground(new java.awt.Color(255, 204, 0));
         bubah.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        bubah.setForeground(new java.awt.Color(0, 0, 0));
         bubah.setText("Ubah");
         bubah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +133,7 @@ public class barang extends javax.swing.JFrame {
             }
         });
 
+        bhapus.setBackground(new java.awt.Color(255, 0, 51));
         bhapus.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bhapus.setText("Hapus");
         bhapus.addActionListener(new java.awt.event.ActionListener() {
@@ -137,6 +142,7 @@ public class barang extends javax.swing.JFrame {
             }
         });
 
+        bbatal.setBackground(new java.awt.Color(204, 204, 204));
         bbatal.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bbatal.setText("Batal");
         bbatal.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +151,7 @@ public class barang extends javax.swing.JFrame {
             }
         });
 
+        bkeluar.setBackground(new java.awt.Color(0, 204, 204));
         bkeluar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bkeluar.setText("Keluar");
         bkeluar.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +160,7 @@ public class barang extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data Barang", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Barang"));
 
         tblbarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         tblbarang.setModel(new javax.swing.table.DefaultTableModel(
@@ -181,6 +188,7 @@ public class barang extends javax.swing.JFrame {
             }
         });
 
+        bcari.setBackground(new java.awt.Color(153, 153, 255));
         bcari.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bcari.setText("Cari");
         bcari.addActionListener(new java.awt.event.ActionListener() {
@@ -216,16 +224,8 @@ public class barang extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        txtkd.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
-        txtnm.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
-        txthb.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
-        txthj.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
         cbjenis.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        cbjenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Makanan", "Minuman", "Kosmetik", "Pakaian", "Elektronik", "Alat Mandi" }));
+        cbjenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Makanan", "Minuman", " " }));
         cbjenis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbjenisActionPerformed(evt);
@@ -238,40 +238,40 @@ public class barang extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bsimpan)
-                        .addGap(18, 18, 18)
-                        .addComponent(bubah)
-                        .addGap(18, 18, 18)
-                        .addComponent(bhapus)
-                        .addGap(18, 18, 18)
-                        .addComponent(bbatal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bkeluar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtkd, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                            .addComponent(txtnm)
-                            .addComponent(txthb)
-                            .addComponent(txthj)
-                            .addComponent(cbjenis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(bsimpan)
+                .addGap(18, 18, 18)
+                .addComponent(bubah)
+                .addGap(18, 18, 18)
+                .addComponent(bhapus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bbatal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bkeluar)
                 .addGap(97, 97, 97))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(206, 206, 206)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtkd)
+                            .addComponent(txtnm)
+                            .addComponent(txthb)
+                            .addComponent(txthj)
+                            .addComponent(cbjenis, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
