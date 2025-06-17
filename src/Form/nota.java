@@ -6,6 +6,10 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JSpinner;
 import Koneksi.koneksi;
+import java.util.HashMap;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 /**
  *
  * @author Lathifah
@@ -25,6 +29,25 @@ private Connection conn = new koneksi().connect();
         aktif();
         autonumber();
     }
+    
+    public void cetak() {
+    try {
+        String path = "./src/laporan/laporan_nota.jasper";
+        HashMap parameter = new HashMap();
+
+        String id = txtidnota.getText();  // atau isi manual dulu "IN0001"
+        System.out.println("ID NOTA: " + id);
+        parameter.put("id_nota", id);
+
+        JasperPrint print = JasperFillManager.fillReport(path, parameter, conn);
+        JasperViewer.viewReport(print, false);
+    } catch (Exception ex) {
+        ex.printStackTrace(); // tampilkan detail error
+        JOptionPane.showMessageDialog(rootPane, "Dokumen Tidak Ada: " + ex.getMessage());
+    }
+}
+
+
     //method Nama Kasir
     protected void nama(){
         try{
@@ -41,7 +64,8 @@ private Connection conn = new koneksi().connect();
     //method aktif
     protected void aktif(){
         txtqty.requestFocus();
-        jtgl.setEditor(new JSpinner.DateEditor(jtgl,"yyyy/MM/dd"));
+        jtgl.setEditor(new JSpinner.DateEditor(jtgl, "yyyy/MM/dd HH:mm:ss"));
+
         Object[] Baris = {"KD Barang","Nama","Harga Beli","Harga Jual","QTY","Total"};
         tabmode = new DefaultTableModel(null,Baris);
         tbltransaksi.setModel(tabmode);
@@ -174,7 +198,7 @@ private Connection conn = new koneksi().connect();
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setText("Tanggal Nota                 :");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data Pelanggan", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Pelanggan"));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel7.setText("ID Pelanggan                :");
@@ -189,7 +213,6 @@ private Connection conn = new koneksi().connect();
         txtalmt.setRows(5);
         jScrollPane2.setViewportView(txtalmt);
 
-        txtnm.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtnm.setMinimumSize(new java.awt.Dimension(4, 23));
         txtnm.setPreferredSize(new java.awt.Dimension(4, 23));
         txtnm.addActionListener(new java.awt.event.ActionListener() {
@@ -197,8 +220,6 @@ private Connection conn = new koneksi().connect();
                 txtnmActionPerformed(evt);
             }
         });
-
-        txtid.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         bcarip.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bcarip.setText("Cari");
@@ -249,7 +270,7 @@ private Connection conn = new koneksi().connect();
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data Barang", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Barang"));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel10.setText("KD Barang                   :");
@@ -277,24 +298,15 @@ private Connection conn = new koneksi().connect();
             }
         });
 
-        txtkd.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtkd.setMinimumSize(new java.awt.Dimension(4, 23));
 
-        txtnmbrg.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtnmbrg.setMinimumSize(new java.awt.Dimension(4, 23));
 
-        txthb.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
-        txthj.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
-        txtqty.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtqty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtqtyActionPerformed(evt);
             }
         });
-
-        txttotal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         bcaribrg.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         bcaribrg.setText("Cari");
@@ -373,7 +385,7 @@ private Connection conn = new koneksi().connect();
                 .addContainerGap())
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data Pelanggan", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Pelanggan"));
 
         tbltransaksi.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         tbltransaksi.setModel(new javax.swing.table.DefaultTableModel(
@@ -468,41 +480,12 @@ private Connection conn = new koneksi().connect();
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(28, 28, 28)
-                                        .addComponent(jLabel3))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(txtidnota, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel17))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jtgl, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(84, 84, 84)))))
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addGap(490, 490, 490)
+                .addComponent(jLabel1)
+                .addContainerGap(500, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(bsimpan)
                         .addGap(18, 18, 18)
@@ -513,10 +496,38 @@ private Connection conn = new koneksi().connect();
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(490, 490, 490)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(28, 28, 28)
+                                            .addComponent(jLabel3))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(25, 25, 25)
+                                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2)
+                                        .addComponent(txtidnota, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(20, 20, 20)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel17))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jtgl, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(84, 84, 84))))))
+                .addGap(0, 21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -642,8 +653,9 @@ private Connection conn = new koneksi().connect();
     }//GEN-LAST:event_bhapusActionPerformed
 
     private void bsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsimpanActionPerformed
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String fd= sdf.format(jtgl.getValue());
+       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+String fd = sdf.format(jtgl.getValue());
+
         String sql = "insert into nota values(?,?,?,?)";
         String zsql = "insert into isi values(?,?,?,?,?)";
         try{
@@ -669,10 +681,10 @@ private Connection conn = new koneksi().connect();
                         stat2.setString(3,xhb);
                         stat2.setString(4,xhj);
                         stat2.setString(5,xqty);
-                        
                         stat2.executeUpdate();
             }
-            JOptionPane.showMessageDialog(null,"data berhasil disimpan");       
+            JOptionPane.showMessageDialog(null,"data berhasil disimpan"); 
+            cetak();
             }
         catch (SQLException e){
             JOptionPane.showMessageDialog(null,"data gagal disimpan"+e);

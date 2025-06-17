@@ -225,7 +225,7 @@ public class barang extends javax.swing.JFrame {
         txthj.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         cbjenis.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        cbjenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Makanan", "Minuman" }));
+        cbjenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Makanan", "Minuman", "Kosmetik", "Pakaian", "Elektronik", "Alat Mandi" }));
         cbjenis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbjenisActionPerformed(evt);
